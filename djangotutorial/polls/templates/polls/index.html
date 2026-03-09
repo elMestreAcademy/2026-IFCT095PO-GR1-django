@@ -1,0 +1,28 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+<style>
+
+* {
+    font-family: "Playwrite AT", cursive;
+    background-color: darkslategrey;
+    color: #e0e5da
+}
+
+a {
+  color: #807245;
+  font-weight: bold;
+}
+
+</style>
+{% if latest_question_list %}
+    <div>
+        <ol>
+            {% for question in latest_question_list %}
+            <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+            {% endfor %}
+        </ul>
+    <div>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
