@@ -3,20 +3,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
 <style>
 
-* {
-    font-family: "Playwrite AT", cursive;
-    background-color: darkslategrey;
-    color: #e0e5da
-}
+    * {
+        font-family: "Playwrite AT", cursive;
+        background-color: darkslategrey;
+        color: #e0e5da
+    }
 
-a {
-  color: #807245;
-  font-weight: bold;
-}
-a:link { color: red; }
-a:visited { color: green; }
-a:hover { color: hotpink; }
-a:active { color: blue; }
+    a {
+    color: #807245;
+    font-weight: bold;
+    }
+    a:link { color: red; }
+    a:visited { color: green; }
+    a:hover { color: hotpink; }
+    a:active { color: blue; }
 
 
 </style>
@@ -24,7 +24,7 @@ a:active { color: blue; }
     <div>
         <ol>
             {% for question in latest_question_list %}
-            <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
             {% endfor %}
         </ul>
     <div>
